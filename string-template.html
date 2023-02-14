@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <script>
+        const name = "Nursalim";
+        const value = 80;
+
+        const template = `Name : ${name}, Lulus: ${value > 75}`;
+        console.info(template);
+
+        let multiLineString = `ini 
+        adalah
+        multi line string
+        menggunakan backtick`
+
+        document.writeln("<pre>");
+        document.writeln(multiLineString)
+        document.writeln("</pre>");    
+    </script>
+</body>
+</html>
