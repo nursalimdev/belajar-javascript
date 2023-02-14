@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator In</title>
+</head>
+<body>
+    <script>
+        const person = {
+            namaDepan: "Nursalim",
+            namaBelakang: "Al Farizi"
+        }
+
+        let result = "namaDepan" in person;
+        console.info(result);
+
+        result = "umur" in person;
+        console.info(result);
+
+
+        const orang = {
+            nama: undefined
+        };
+
+        console.info("nama" in orang);
+
+        const buah = [null, 'Semangka', "Rambutan"];
+        console.info(0 in buah);
+    </script>
+</body>
+</html>

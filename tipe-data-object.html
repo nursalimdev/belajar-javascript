@@ -10,6 +10,34 @@
     <script>
         // membuat object kosong
         const person = {};
+
+        // menambah dan mengubah property
+        person["nama"] = "Nursalim";
+        person["alamat"] = "Brebes";
+        person["hobi"] = "Makan";
+        person["umur"] = 30;
+
+        console.table(person);
+
+        // menghapus
+        delete person["umur"];
+        console.table(person);
+
+
+        const mobil = {
+            merk: "Toyota",
+            nama: "Toyota Velfire",
+            jenis: "SUV",
+            harga: 400000000,
+            "spesifikasi mesin": "3000 cc"
+        }
+        console.table(mobil);
+
+        // mengakses property
+        console.info(`Merk: ${mobil.merk}`);
+        console.info(`Nama: ${mobil.nama}`);
+        console.info(`Harga: ${mobil.harga}`);
+        console.info(`jenis: ${mobil["jenis"]}`);
     </script>
 </body>
 </html>
