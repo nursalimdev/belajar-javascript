@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+        const names = ['Nursalim', 'Al', 'Farizi', 'Budi', 'Eki', 'Jono'];
+        // tanpa destructuring
+        // const firstName = names[0];
+        // const middleName = names[1];
+        // const lastName = names[2];
+
+        // menggunakan destructuring
+        // const [firstName, middleName, lastName, ...others] = names;
+
+        
+
+        const person = {
+            firstName: 'Nursalim',
+            lastName: 'Al Farizi',
+            address: {
+                street: 'Jalan Gintung',
+                city: 'Jakarta',
+                country: 'Indonesia'
+            },
+            hobby: 'Makan',
+            pekerjaan: 'OB'
+        };
+
+        // const {firstName, lastName, address, ...others} = person;
+        const {firstName, lastName, address: {street, country, city}, ...others} = person;
+
+        console.info(firstName);
+        console.info(lastName);
+        // console.info(address);
+        console.info(street);
+        console.info(country);
+        console.info(city);
+        console.info(others);
+
+        {
+            const person = {
+                firstName: 'Nursalim',
+                lastName: 'Al Farizi',
+                address: {
+                    street: 'Jalan Gintung',
+                    city: 'Jakarta',
+                    country: 'Indonesia'
+                },
+                hobby: 'Makan',
+                pekerjaan: 'OB'
+            };  
+
+            function displayPerson({firstName, lastName, address}){
+                console.info(firstName);
+                console.info(lastName);
+                console.info(address);
+            }
+
+            displayPerson(person);
+        }
+
+        {
+            // without destructuring
+            // function sum(array){
+            //     console.info(arry[0] + array[1]);
+            // }
+
+            function sum([first, second]){
+                console.info(first + second);
+            }
+
+            sum([10, 15]);
+        }
+
+        {
+            const names = ['Nursalim', 'Al'];
+            const [firstName, middleName, lastName = 'Farizi'] = names;
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        {
+            const person = {
+                firstName: 'Nursalim',
+                lastName: 'Al Farizi'
+            };
+
+            const {firstName, lastName, hobby = 'Makan'} = person;
+            console.info(firstName);
+            console.info(lastName);
+            console.info(hobby);
+        }
+
+        {
+            const person = {
+                firstName: 'Nursalim',
+                lastName: 'Al Farizi'
+            };
+
+            const {firstName: namaDepan, lastName: namaBelakang, hobby: hobi = 'Makan'} = person;
+            console.info(namaDepan);
+            console.info(namaBelakang);
+            console.info(hobi);
+        }
+    </script>
+</body>
+</html>
